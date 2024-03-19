@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:56:12 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/07 19:04:36 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/17 05:42:58 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,13 @@
 # include <math.h>
 # include <mlx.h>
 
-typedef struct s_fractol
+typedef struct s_data
 {
-    void	*mlx;
-    void	*win;
-}	t_fractol;
-
-
-
-
+	void	*img;
+	char	*add;
+	int		bits;
+	int		line;
+	int		endian;
+}	t_data;
 
 #endif
