@@ -6,12 +6,12 @@
 #    By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/17 05:23:31 by oel-feng          #+#    #+#              #
-#    Updated: 2024/03/17 05:39:45 by oel-feng         ###   ########.fr        #
+#    Updated: 2024/03/25 02:03:23 by oel-feng         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = fractol.c
-	
+SRC = fractol.c utils/utils1.c \
+
 OBJ = ${SRC:.c=.o}
 NAME = fractol
 CC = cc

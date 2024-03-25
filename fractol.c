@@ -6,33 +6,31 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:55:48 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/03/17 05:43:22 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/03/25 02:14:21 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	my_mlx_put_pixel(t_data *data, int x, int y, int color)
+static void	initialize_fractol(t_mlx *fractal, char **av)
 {
-	char	*dest;
-
-	dest = data->add + (y * data->line + x * (data->bits / 8));
-	*(unsigned int *)dest = color;
+	(void)fractal;
+	ft_putendl_fd(av[1], 1);
 }
 
 int	main(int ac, char **av)
 {
-	t_data	img;
-	void	*mlx;
-	void	*win;
+	t_mlx	fractal;
 
-	(void)av;
-	(void)ac;
-	mlx = mlx_init();
-	win = mlx_new_window(mlx, 1920, 1080, "fractol");
-	img.img = mlx_new_image(mlx, 1920, 1080);
-	img.add = mlx_get_data_addr(img.img, &img.bits, &img.line, &img.endian);
-	mlx_put_image_to_window(mlx, win, img.img, 0, 0);
-	mlx_loop(mlx);
-	return (0);
+	if (ac == 2 && ft_strncmp(av[1], "Mandelbrot", ft_strlen(av[1])))
+		initialize_fractol(&fractal, av);
+	else if (ac == 2 && ft_strncmp(av[1], "Tricorn", ft_strlen(av[1])))
+		initialize_fractol(&fractal, av);
+	else if (ac == 4 && ft_strncmp(av[1], "Julia", ft_strlen(av[1])))
+		initialize_fractol(&fractal, av);
+	else
+	{
+		ft_putendl_fd(ARG_ERR, 2);
+		exit(EXIT_FAILURE);
+	}
 }
