@@ -1,22 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.c                                          :+:      :+:    :+:   */
+/*   ft_cpy.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/07 18:55:48 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/04/01 12:19:56 by oel-feng         ###   ########.fr       */
+/*   Created: 2024/04/01 11:23:50 by oel-feng          #+#    #+#             */
+/*   Updated: 2024/04/01 12:12:46 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../fractol.h"
 
-
-int	main(int ac, char **av)
+static void	malloc_fail(void)
 {
-	t_mlx	fractal;
+	ft_putendl_fd("Error in allocation", 2);
+	exit(EXIT_FAILURE);
+}
 
-	parsing(ac, av, &fractal);
-	exit(EXIT_SUCCESS);
+char	*ft_cpy(char *src, int start, int end)
+{
+	int		i;
+	char	*dest;
+
+	i = 0;
+	dest = (char *)malloc(((end - start) + 1) * sizeof(char));
+	if (!dest)
+		malloc_fail();
+	while (start < end)
+	{
+		dest[i] = src[start];
+		start++;
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
