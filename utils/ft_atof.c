@@ -6,17 +6,17 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 02:08:37 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/04/01 12:18:08 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/04/01 12:40:28 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
 
-static float	utils_atof(char *str)
+static double	utils_atof(char *str)
 {
 	int		i;
-	float	div;
-	float	res;
+	double	div;
+	double	res;
 
 	i = 0;
 	div = 1.0;
@@ -31,11 +31,11 @@ static float	utils_atof(char *str)
 	return (res);
 }
 
-static float	ft_atof_helper(char *str, int n)
+static double	ft_atof_helper(char *str, int n)
 {
-	float	bef_d;
-	float	aft_d;
-	float	result;
+	double	bef_d;
+	double	aft_d;
+	double	result;
 	char	*str1;
 	char	*str2;
 	
@@ -49,7 +49,7 @@ static float	ft_atof_helper(char *str, int n)
 	return (result);
 }
 
-float	ft_atof(char *str)
+double	ft_atof(char *str)
 {
 	int		i;
 	int		n;

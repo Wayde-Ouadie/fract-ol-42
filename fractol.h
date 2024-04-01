@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:56:12 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/04/01 11:51:33 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/04/01 12:40:48 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ typedef struct s_mlx
 
 //utils
 size_t	ft_strlen(char *str);
-float	ft_atof_util(char *str);
+double	ft_atof_util(char *str);
 void	ft_putendl_fd(char *s, int fd);
 char	*ft_cpy(char *src, int start, int end);
 
 //parsing
-float	ft_atof(char *str);
+double	ft_atof(char *str);
 bool	ft_strncmp(char *s1, char *s2, size_t n);
 void	parsing(int ac, char **av, t_mlx *fractal);
 void	julia_params(t_mlx *fractal, char *real, char *imag);
