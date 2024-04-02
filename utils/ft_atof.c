@@ -6,13 +6,13 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 02:08:37 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/04/01 12:40:28 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/04/01 12:42:10 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
 
-static double	utils_atof(char *str)
+static double	ft_util_atof(char *str)
 {
 	int		i;
 	double	div;
@@ -42,7 +42,7 @@ static double	ft_atof_helper(char *str, int n)
 	str1 = ft_cpy(str, 0, n);
 	bef_d = ft_atof_util(str1);
 	str2 = ft_cpy(str, n+1, ft_strlen(str));
-	aft_d = utils_atof(str2);
+	aft_d = ft_util_atof(str2);
 	result = bef_d + aft_d;
 	free(str1);
 	free(str2);
