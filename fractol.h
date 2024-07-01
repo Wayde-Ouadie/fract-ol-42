@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:56:12 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/07/01 04:47:52 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/07/01 06:23:26 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void	error_msg(char *s);
 size_t	ft_strlen(char *str);
 void	init_data(t_mlx *fractal);
 void	ft_putendl_fd(char *s, int fd);
+void    render_tricorn(t_mlx *fractal);
 void    render_mandelbrot(t_mlx *fractal);
 bool	ft_strncmp(char *s1, char *s2, size_t n);
 int		colors(t_rgb *rgb, int iter, int factor);

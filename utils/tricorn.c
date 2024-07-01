@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mandelbrot.c                                       :+:      :+:    :+:   */
+/*   tricorn.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/01 02:08:53 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/07/01 06:26:38 by oel-feng         ###   ########.fr       */
+/*   Created: 2024/07/01 06:19:42 by oel-feng          #+#    #+#             */
+/*   Updated: 2024/07/01 06:29:10 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
 
-static void mandelbrot_helper(t_mlx *fractal, int x, int y)
+static void tricorn_helper(t_mlx *fractal, int x, int y)
 {
     int     i;
 	t_comp	z;
@@ -30,7 +30,7 @@ static void mandelbrot_helper(t_mlx *fractal, int x, int y)
 	while ((z.x * z.x + z.y * z.y) <= 4 && i < fractal->iter)
 	{
 		tmp = ((z.x * z.x) - (z.y * z.y)) + c.x;
-		z.y = (2 * z.x * z.y) + c.y;
+		z.y = -2 * z.x * z.y + c.y;
 		z.x = tmp;
 		i++;
 	}
@@ -40,7 +40,7 @@ static void mandelbrot_helper(t_mlx *fractal, int x, int y)
 		my_mlx_put_pixel(fractal, x, y, colors(&rgb, i, fractal->factor));
 }
 
-void    render_mandelbrot(t_mlx *fractal)
+void    render_tricorn(t_mlx *fractal)
 {
     int x;
     int y;
@@ -51,7 +51,7 @@ void    render_mandelbrot(t_mlx *fractal)
         y = 0;
         while (y < 800)
         {
-            mandelbrot_helper(fractal, x, y);
+            tricorn_helper(fractal, x, y);
 			y++;
         }
         x++;

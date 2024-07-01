@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 01:11:24 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/07/01 04:57:45 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/07/01 06:19:17 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ void	error_msg(char *s)
 
 void	my_mlx_put_pixel(t_mlx *fractal, int x, int y, int color)
 {
-	char	*dest;
+	char	*dst;
 
-	dest = fractal->data.add + (y * fractal->data.line 
+	dst = fractal->data.add + (y * fractal->data.line 
 			+ x * (fractal->data.bits / 8));
-	*(unsigned int*)dest = color;
+	*(unsigned int*)dst = color;
 }
 
 static int	colors_helper(int red, int green, int blue)
