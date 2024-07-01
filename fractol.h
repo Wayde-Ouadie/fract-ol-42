@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:56:12 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/04/01 12:40:48 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/07/01 04:47:52 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 # include <mlx.h>
 
 # define ARG_ERR "Wrong arguments provided :\n\
-./fractol Mandelbrot\n./fractol Julia z i\n./fractol PlaceHolder" 
-# define REAL_ERR "Please provide a correct real number"
-# define IMAG_ERR "Please provide a correct imaginary number"
+./fractol Mandelbrot\n./fractol Julia z i\n./fractol Tricorn\n" 
+# define REAL_ERR "Please provide a correct real number.\n"
+# define IMAG_ERR "Please provide a correct imaginary number.\n"
 
 typedef struct s_data
 {
@@ -36,22 +36,46 @@ typedef struct s_data
 
 typedef struct s_mlx
 {
-	void	*mlx;
+	char	*fractal;
 	void	*win;
-	float	real_julia;
-	float	imag_julia;
+	void	*mlx;
+	t_data	data;
+	int	    factor;
+	int		iter;
+	double	sh_x;
+	double	sh_y;
+	double	zoom;
+	double	x1;
+	double	x2;
+	double	y1;
+	double	y2;
+	double	real_julia;
+	double	imag_julia;
 }	t_mlx;
 
-//utils
-size_t	ft_strlen(char *str);
-double	ft_atof_util(char *str);
-void	ft_putendl_fd(char *s, int fd);
-char	*ft_cpy(char *src, int start, int end);
+typedef struct s_comp
+{
+	double	x;
+	double	y;
+}	t_comp;
 
-//parsing
-double	ft_atof(char *str);
+typedef struct s_rgb
+{
+	int	red;
+	int	green;
+	int	blue;
+}	t_rgb;
+
+void	error_msg(char *s);
+size_t	ft_strlen(char *str);
+void	init_data(t_mlx *fractal);
+void	ft_putendl_fd(char *s, int fd);
+void    render_mandelbrot(t_mlx *fractal);
 bool	ft_strncmp(char *s1, char *s2, size_t n);
+int		colors(t_rgb *rgb, int iter, int factor);
 void	parsing(int ac, char **av, t_mlx *fractal);
-void	julia_params(t_mlx *fractal, char *real, char *imag);
+void	initialize_fractol(t_mlx *fractal, char **av);
+double ft_scale(double x, double max, double nmin, double nmax);
+void	my_mlx_put_pixel(t_mlx *fractal, int x, int y, int color);
 
 #endif
