@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:56:12 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/07/11 04:53:47 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/07/11 04:55:54 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <mlx.h>
 
 # define ARG_ERR "Wrong arguments provided :\n\
-./fractol Mandelbrot\n./fractol Julia z i\n./fractol Tricorn\n" 
+./fractol Mandelbrot\n./fractol Julia z i\n./fractol Tricorn" 
 # define REAL_ERR "Please provide a correct real number.\n"
 # define IMAG_ERR "Please provide a correct imaginary number.\n"
 # define BLACK 0x000000
