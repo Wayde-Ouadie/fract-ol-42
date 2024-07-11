@@ -6,11 +6,22 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:55:48 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/07/01 07:46:37 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/07/11 04:40:08 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+
+static int ft_close(void *set)
+{
+	t_mlx *fractal;
+
+	fractal = (t_mlx *)set;
+	mlx_destroy_image(fractal->mlx, fractal->data.img);
+	mlx_destroy_window(fractal->mlx, fractal->win);
+	exit(EXIT_SUCCESS);
+	return (0);
+}
 
 int	main(int ac, char **av)
 {
@@ -19,6 +30,15 @@ int	main(int ac, char **av)
 	parsing(ac, av, &fractal);
 	exit(EXIT_SUCCESS);
 }
+void	rendering(char *str, t_mlx *fractal)
+{
+	if (ft_strncmp(str, "Mandelbrot", ft_strlen(str)))
+		render_mandelbrot(fractal);
+	else if (ft_strncmp(str, "Tricorn", ft_strlen(str)))
+		render_tricorn(fractal);
+	else if (ft_strncmp(str, "Julia", ft_strlen(str)))
+		render_julia(fractal);
+}
 
 void	initialize_fractol(t_mlx *fractal, char **av)
 {
@@ -26,11 +46,9 @@ void	initialize_fractol(t_mlx *fractal, char **av)
 	if (!fractal->fractal)
 		return ;
 	init_data(fractal);
-	if (ft_strncmp(av[1], "Mandelbrot", ft_strlen(av[1])))
-		render_mandelbrot(fractal);
-	else if (ft_strncmp(av[1], "Tricorn", ft_strlen(av[1])))
-		render_tricorn(fractal);
-	else if (ft_strncmp(av[1], "Julia", ft_strlen(av[1])))
-		render_julia(fractal);
+	rendering(av[1], fractal);
+	mlx_hook(fractal->win, 2, 0, ft_key, fractal);
+	mlx_hook(fractal->win, 4, 0, ft_mouse, fractal);
+	mlx_hook(fractal->win, 17, 0, ft_close, fractal);
 	mlx_loop(fractal->mlx);
 }

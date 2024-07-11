@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:56:12 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/07/01 07:50:44 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/07/11 04:39:53 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@
 ./fractol Mandelbrot\n./fractol Julia z i\n./fractol Tricorn\n" 
 # define REAL_ERR "Please provide a correct real number.\n"
 # define IMAG_ERR "Please provide a correct imaginary number.\n"
+# define BLACK 0x000000
+# define WHITE 0XFFFFFF
 
 typedef struct s_data
 {
@@ -66,19 +68,22 @@ typedef struct s_rgb
 	int	blue;
 }	t_rgb;
 
+
 void	error_msg(char *s);
 size_t	ft_strlen(char *str);
 void	init_data(t_mlx *fractal);
+int		ft_key(int key, void *set);
 double	double_converter(char *str);
-void    render_julia(t_mlx *fractal);
+void	render_julia(t_mlx *fractal);
 void	ft_putendl_fd(char *s, int fd);
-void    render_tricorn(t_mlx *fractal);
-void    render_mandelbrot(t_mlx *fractal);
+void	render_tricorn(t_mlx *fractal);
+void	render_mandelbrot(t_mlx *fractal);
+void	rendering(char *str, t_mlx *fractal);
 bool	ft_strncmp(char *s1, char *s2, size_t n);
-int		colors(t_rgb *rgb, int iter, int factor);
 void	parsing(int ac, char **av, t_mlx *fractal);
+int		ft_mouse(int mouse, int x, int y, void *set);
 void	initialize_fractol(t_mlx *fractal, char **av);
-double ft_scale(double x, double max, double nmin, double nmax);
+double	ft_scale(double x, double max, double nmin, double nmax);
 void	my_mlx_put_pixel(t_mlx *fractal, int x, int y, int color);
 
 #endif

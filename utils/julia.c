@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 06:24:08 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/07/01 07:52:06 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/07/11 03:15:49 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ static void julia_helper(t_mlx *fractal, int x, int y)
 	t_comp	z;
 	t_comp	c;
 	double	tmp;
-	t_rgb	rgb;
 
 	c.x = fractal->real_julia;
 	c.y = fractal->imag_julia * -1;
@@ -35,9 +34,9 @@ static void julia_helper(t_mlx *fractal, int x, int y)
 		i++;
 	}
 	if (i == fractal->iter)
-		my_mlx_put_pixel(fractal, x, y, 0x000000);
+		my_mlx_put_pixel(fractal, x, y, BLACK);
 	else
-		my_mlx_put_pixel(fractal, x, y, colors(&rgb, i, fractal->factor));
+		my_mlx_put_pixel(fractal, x, y, ft_scale((i * fractal->factor), BLACK, WHITE, fractal->iter));
 }
 
 void    render_julia(t_mlx *fractal)
