@@ -6,15 +6,15 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:55:48 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/07/11 04:40:08 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/07/11 04:53:28 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static int ft_close(void *set)
+static int	ft_close(void *set)
 {
-	t_mlx *fractal;
+	t_mlx	*fractal;
 
 	fractal = (t_mlx *)set;
 	mlx_destroy_image(fractal->mlx, fractal->data.img);
@@ -30,6 +30,7 @@ int	main(int ac, char **av)
 	parsing(ac, av, &fractal);
 	exit(EXIT_SUCCESS);
 }
+
 void	rendering(char *str, t_mlx *fractal)
 {
 	if (ft_strncmp(str, "Mandelbrot", ft_strlen(str)))

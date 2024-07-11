@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 06:34:39 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/07/01 07:05:39 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/07/11 04:46:48 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ static long int	virgule_calculation(char *str, int i, long int *div)
 	return (virg);
 }
 
-double  double_converter(char *str)
+double	double_converter(char *str)
 {
-	int         signe;
+	int			signe;
 	int			i;
-	long int    n;
-	long int    div;
-	long int    virg;
+	long int	n;
+	long int	div;
+	long int	virg;
 
 	n = 0;
 	i = 0;

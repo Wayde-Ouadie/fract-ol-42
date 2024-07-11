@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 02:38:53 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/07/11 04:42:17 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/07/11 04:50:54 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ static void	iter_change(t_mlx *fractal, int key)
 		fractal->iter -= 13;
 }
 
-int ft_key(int key, void *set)
+int	ft_key(int key, void *set)
 {
-	t_mlx *fractal;
+	t_mlx	*fractal;
 
 	fractal = (t_mlx *)set;
 	if (fractal == NULL)
@@ -57,7 +57,7 @@ int ft_key(int key, void *set)
 
 int	ft_mouse(int mouse, int x, int y, void *set)
 {
-	t_mlx 	*fractal;
+	t_mlx	*fractal;
 	double	x_line;
 	double	y_line;
 

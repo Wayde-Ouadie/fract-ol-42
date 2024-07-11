@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 01:39:53 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/07/01 05:13:39 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/07/11 04:48:19 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,13 @@ void	ft_putendl_fd(char *s, int fd)
 	ft_putchar_fd('\n', fd);
 }
 
-double ft_scale(double x, double min
+double	ft_scale(double x, double min
 		, double max, double omax)
 {
-    double range;
-    double ret;
-    
-    range = max - min;
-    ret = range * x / omax + min;
-    return (ret);
+	double	range;
+	double	ret;
+
+	range = max - min;
+	ret = range * x / omax + min;
+	return (ret);
 }

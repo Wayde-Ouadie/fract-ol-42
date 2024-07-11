@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:56:12 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/07/11 04:39:53 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/07/11 04:53:47 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef struct s_mlx
 	void	*win;
 	void	*mlx;
 	t_data	data;
-	int	    factor;
+	int		factor;
 	int		iter;
 	double	sh_x;
 	double	sh_y;
@@ -67,7 +67,6 @@ typedef struct s_rgb
 	int	green;
 	int	blue;
 }	t_rgb;
-
 
 void	error_msg(char *s);
 size_t	ft_strlen(char *str);
