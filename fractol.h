@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:56:12 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/07/11 04:55:54 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/07/15 03:01:45 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,12 @@
 
 # define ARG_ERR "Wrong arguments provided :\n\
 ./fractol Mandelbrot\n./fractol Julia z i\n./fractol Tricorn" 
-# define REAL_ERR "Please provide a correct real number.\n"
-# define IMAG_ERR "Please provide a correct imaginary number.\n"
+# define REAL_ERR "Please provide a correct real number."
+# define IMAG_ERR "Please provide a correct imaginary number."
 # define BLACK 0x000000
 # define WHITE 0XFFFFFF
+# define WIDTH 800
+# define HEIGHT 800
 
 typedef struct s_data
 {
@@ -53,6 +55,7 @@ typedef struct s_mlx
 	double	y2;
 	double	real_julia;
 	double	imag_julia;
+	double	color;
 }	t_mlx;
 
 typedef struct s_comp
@@ -72,12 +75,12 @@ void	error_msg(char *s);
 size_t	ft_strlen(char *str);
 void	init_data(t_mlx *fractal);
 int		ft_key(int key, void *set);
-double	double_converter(char *str);
 void	render_julia(t_mlx *fractal);
 void	ft_putendl_fd(char *s, int fd);
 void	render_tricorn(t_mlx *fractal);
 void	render_mandelbrot(t_mlx *fractal);
 void	rendering(char *str, t_mlx *fractal);
+double	double_converter(char *str, int flag);
 bool	ft_strncmp(char *s1, char *s2, size_t n);
 void	parsing(int ac, char **av, t_mlx *fractal);
 int		ft_mouse(int mouse, int x, int y, void *set);

@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 06:19:42 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/07/11 04:50:07 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/07/15 03:50:30 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,13 @@ static void	tricorn_helper(t_mlx *fractal, int x, int y)
 	t_comp	c;
 	double	tmp;
 
-	z.x = 0;
-	z.y = 0;
 	i = 0;
-	c.x = (ft_scale(x, fractal->x1, fractal->x2, 800) * fractal->zoom)
+	z.y = 0;
+	z.x = 0;
+	fractal->color = 50;
+	c.x = (ft_scale(x, fractal->x1, fractal->x2, WIDTH) * fractal->zoom)
 		+ fractal->sh_x;
-	c.y = (ft_scale(y, fractal->y1, fractal->y2, 800) * fractal->zoom)
+	c.y = (ft_scale(y, fractal->y1, fractal->y2, HEIGHT) * fractal->zoom)
 		+ fractal->sh_y;
 	while ((z.x * z.x + z.y * z.y) <= 4 && i < fractal->iter)
 	{
@@ -37,7 +38,7 @@ static void	tricorn_helper(t_mlx *fractal, int x, int y)
 		my_mlx_put_pixel(fractal, x, y, BLACK);
 	else
 		my_mlx_put_pixel(fractal, x, y,
-			ft_scale((i * fractal->factor), BLACK, WHITE, fractal->iter));
+			ft_scale((i * fractal->factor), BLACK, WHITE, fractal->color));
 }
 
 void	render_tricorn(t_mlx *fractal)
@@ -46,10 +47,10 @@ void	render_tricorn(t_mlx *fractal)
 	int	y;
 
 	x = 0;
-	while (x < 800)
+	while (x < WIDTH)
 	{
 		y = 0;
-		while (y < 800)
+		while (y < HEIGHT)
 		{
 			tricorn_helper(fractal, x, y);
 			y++;

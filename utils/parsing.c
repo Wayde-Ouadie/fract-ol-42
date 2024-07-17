@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 01:35:20 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/07/11 04:50:26 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/07/15 03:20:02 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void	julia_params(t_mlx *fractal, char *real, char *imag)
 {
-	fractal->real_julia = double_converter(real);
-	fractal->imag_julia = double_converter(imag);
+	fractal->real_julia = double_converter(real, 1);
+	fractal->imag_julia = double_converter(imag, 2);
 }
 
 void	parsing(int ac, char **av, t_mlx *fractal)

@@ -6,21 +6,31 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 01:02:16 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/07/11 04:53:03 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/07/15 03:50:43 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
+
+static void	check_size(void)
+{
+	if (WIDTH < 1)
+		error_msg("Invalid width size");
+	if (HEIGHT < 1)
+		error_msg("Invalid height size");
+}
 
 void	init_data(t_mlx *fractal)
 {
 	fractal->mlx = mlx_init();
 	if (!fractal->mlx)
 		error_msg("Initialization error.\n");
-	fractal->win = mlx_new_window(fractal->mlx, 800, 800, fractal->fractal);
+	check_size();
+	fractal->win = mlx_new_window(fractal->mlx, WIDTH,
+			HEIGHT, fractal->fractal);
 	if (!fractal->win)
 		error_msg("Window error.\n");
-	fractal->data.img = mlx_new_image(fractal->mlx, 800, 800);
+	fractal->data.img = mlx_new_image(fractal->mlx, WIDTH, HEIGHT);
 	if (!fractal->data.img)
 	{
 		mlx_destroy_window(fractal->mlx, fractal->win);

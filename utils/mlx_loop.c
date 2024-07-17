@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 02:38:53 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/07/11 04:50:54 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/07/15 02:58:48 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ int	ft_mouse(int mouse, int x, int y, void *set)
 	fractal = (t_mlx *)set;
 	if (x < 0 || y < 0)
 		return (1);
-	x_line = ft_scale(x, fractal->x1, fractal->x2, 800);
-	y_line = ft_scale(y, fractal->y1, fractal->y2, 800);
+	x_line = ft_scale(x, fractal->x1, fractal->x2, WIDTH);
+	y_line = ft_scale(y, fractal->y1, fractal->y2, HEIGHT);
 	if (mouse == 4)
 		fractal->zoom *= 1.5;
 	else if (mouse == 5)
