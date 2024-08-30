@@ -6,7 +6,7 @@
 /*   By: oel-feng <oel-feng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:56:12 by oel-feng          #+#    #+#             */
-/*   Updated: 2024/07/15 03:01:45 by oel-feng         ###   ########.fr       */
+/*   Updated: 2024/08/31 00:00:18 by oel-feng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdbool.h>
 # include <unistd.h>
 # include <math.h>
-# include <mlx.h>
+# include "minilibx_macos/mlx.h"
 
 # define ARG_ERR "Wrong arguments provided :\n\
 ./fractol Mandelbrot\n./fractol Julia z i\n./fractol Tricorn" 
