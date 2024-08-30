@@ -1,14 +1,12 @@
 # Fract'ol
 
-![Fract'ol](/images/fract-ol.svg)
-
 Fract'ol is a School 42 project. The purpose of this project is to create fractal renderer.
 
 Note that **macOS is only supported**.
 
 Note that **mlx is required to run *(already included in this repo)***
 
-[`fract_ol.en.pdf`](/en.subject.pdf) is the task file.
+[`en.subject.pdf`](/en.subject.pdf) is the task file.
 
 ## How to clone?
 
@@ -39,8 +37,6 @@ For example, you can specify Mandelbrot fractal:
 ```
 ./fractol Mandelbrot
 ```
-
-![Mandelbrot](/images/mandelbrot.png)
 
 There are available the following fractals:
 
