@@ -6,21 +6,17 @@ Fract'ol is a School 42 project. The purpose of this project is to create fracta
 
 Note that **macOS is only supported**.
 
-[`fract_ol.en.pdf`](/fract_ol.en.pdf) is the task file.
+Note that **mlx is required to run *(already included in this repo)***
 
-## Wiki
-
-You can check [wiki-pages](../../wiki/) if you want to read detailed explanations and tips. Wiki-pages were written **in Russian**.
+[`fract_ol.en.pdf`](/en.subject.pdf) is the task file.
 
 ## How to clone?
 
-This repository includes submodule. So if you want to clone it, you can use the following command:
+If you want to clone it, you can use the following command:
 
 ```
-git clone --recurse-submodules <repository url>
+git clone <repository url>
 ```
-
-If you will use `git clone <repository url>` instead of, you will get the empty `libft` folder.
 
 ## Installation
 
@@ -46,35 +42,8 @@ For example, you can specify Mandelbrot fractal:
 
 ![Mandelbrot](/images/mandelbrot.png)
 
-Multi-window mode is also supported. For example, you can run the following command to launch two windows:
-
-```
-./fractol <name> <name>
-```
-
-You can specify up to 10 fractal names for one launch.
-
 There are available the following fractals:
 
 * Mandelbrot
+* Tricorn
 * Julia
-* Burning Ship
-* Mandelbar
-* Celtic Mandelbrot
-* Celtic Mandelbar
-* Celtic Perpendicular
-* Perpendicular Mandelbrot
-* Perpendicular Burning Ship
-* Perpendicular Buffalo
-
-Note that for a-few-word names you must use quotes:
-
-```
-./fractol "Perpendicular Burning Ship"
-```
-
-## Controls
-
-You can use H key for the help menu which contains a list of controls.
-
-![Controls](/images/controls.png)
